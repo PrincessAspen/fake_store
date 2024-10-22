@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import styles from './CategoryProducts.module.css'; // Import the CSS module
 
 const CategoryProducts = () => {
   const { category } = useParams();
@@ -21,12 +22,17 @@ const CategoryProducts = () => {
   }
 
   return (
-    <div>
-      <h1>Products in {category}</h1>
-      <ul>
+    <div className={styles.categoryProductsContainer}>
+      <h1>Products in {category.charAt(0).toUpperCase() + category.slice(1)}</h1>
+      <ul className={styles.productList}>
         {products.map((product) => (
-          <li key={product.id}>
-            <a href={`/products/${product.id}`}>{product.title}</a>
+          <li key={product.id} className={styles.productItem}>
+            <img src={product.image} alt={product.title} className={styles.productImage} />
+            <p className={styles.productTitle}>{product.title}</p>
+            <p className={styles.productPrice}>${product.price}</p>
+            <Link to={`/products/${product.id}`} className={styles.productLink}>
+              View Details
+            </Link>
           </li>
         ))}
       </ul>

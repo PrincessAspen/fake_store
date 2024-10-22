@@ -1,0 +1,24 @@
+/* Categories.module.css */
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .categoryItem {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .categoryItem:hover {
+    background-color: #e63946;
+    color: white;
+    cursor: pointer;
+  }
+  

@@ -1,36 +1,40 @@
 import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
-import Products from '../pages/Products'
-import Home from '../pages/Home'
+import Products, {loader as productsLoader} from './Products'
+import Home from './Home'
 import Layout from '../pages/Layout';
-import ProductDetail from '../pages/ProductDetail'
-import Categories from '../pages/Categories';
-import CategoryProducts from '../pages/CategoryProducts';
+import ProductDetail, {loader as productDetailLoader } from './ProductDetail'
+import Categories from './Categories';
+import CategoryProducts from './CategoryProducts';
+import ErrorPage from '../pages/Error';
 
 const Routes = () => {
     const router = createBrowserRouter([{
         element: <Layout/>,
-        children: [{
-            path: "/",
-            element: <Home/>
-        },
-        {
-            path: "/products",
-            element: <Products />
-        },
-        {
-            path: "/products/:id",
-            element: <ProductDetail />
-        },
-        {
-            path: "/categories",
-            element: <Categories />
-        },
-        {
-            path: "/category/:category",
-            element: <CategoryProducts />
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Home/>
+            },
+            {
+                path: "/products",
+                element: <Products />,
+                loader: productsLoader
+            },
+            {
+                path: "/products/:id",
+                element: <ProductDetail />,
+                loader: productDetailLoader
+            },
+            {
+                path: "/categories",
+                element: <Categories />
+            },
+            {
+                path: "/category/:category",
+                element: <CategoryProducts />
+            }],
         }
-    ],
-    }
 
     ]);
 
