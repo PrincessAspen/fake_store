@@ -1,11 +1,14 @@
 import Routes from './routes/Routes'
+import AuthProvider from './AuthContext'
 import styles from './App.module.css'
 
 function App() {
 
   return (
     <>
-    <Routes/>;
+    <AuthProvider>
+      <Routes/>
+    </AuthProvider>
     </>
   );
 };

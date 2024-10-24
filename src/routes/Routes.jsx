@@ -7,6 +7,7 @@ import Categories from './Categories';
 import CategoryProducts from './CategoryProducts';
 import ErrorPage from '../pages/Error';
 import Registration, {action as registrationAction} from './Registration'
+import Login, { action as loginAction} from './Login';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -39,6 +40,11 @@ const Routes = () => {
                 path: '/registration',
                 element: <Registration />,
                 action: registrationAction
+            },
+            {
+                path: '/login',
+                element: <Login />,
+                action: loginAction
             }]
         }
 
