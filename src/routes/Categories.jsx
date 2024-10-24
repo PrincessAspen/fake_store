@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Categories.module.css'
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);

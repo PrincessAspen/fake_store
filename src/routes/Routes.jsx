@@ -6,6 +6,7 @@ import ProductDetail, {loader as productDetailLoader } from './ProductDetail'
 import Categories from './Categories';
 import CategoryProducts from './CategoryProducts';
 import ErrorPage from '../pages/Error';
+import Registration, {action as registrationAction} from './Registration'
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -33,7 +34,12 @@ const Routes = () => {
             {
                 path: "/category/:category",
                 element: <CategoryProducts />
-            }],
+            },
+            {
+                path: '/registration',
+                element: <Registration />,
+                action: registrationAction
+            }]
         }
 
     ]);

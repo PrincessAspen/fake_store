@@ -1,4 +1,4 @@
-import {Outlet, Link} from 'react-router-dom';
+import {Outlet, NavLink} from 'react-router-dom';
 import styles from './Layout.module.css';
 
 const Layout = () => {
@@ -7,13 +7,16 @@ const Layout = () => {
         <nav className={styles.nav}>
             <ul className={styles.navList}>
                 <li className={styles.navItem}>
-                    <Link to="/" className={styles.navLink}>Home</Link>
+                    <NavLink to="/" className={styles.navLink}>Home</NavLink>
                 </li>
                 <li className={styles.navItem}>
-                    <Link to="/products" className={styles.navLink}>Products</Link>
+                    <NavLink to="/products" className={styles.navLink}>Products</NavLink>
                 </li>
                 <li className={styles.navItem}>
-                    <Link to="/categories" className={styles.navLink}>Categories</Link>
+                    <NavLink to="/categories" className={styles.navLink}>Categories</NavLink>
+                </li>
+                <li className={styles.navItem}>
+                    <NavLink to="/registration" className={styles.navLink}>Registration</NavLink>
                 </li>
             </ul>
         </nav>
