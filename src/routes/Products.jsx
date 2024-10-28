@@ -38,8 +38,8 @@ const Products = () => {
                 {products.map((product) => (
                     <li key={product.id}>
                         <Link to={`/products/${product.id}`}>View Product Details</Link>
-                        <img src={product.image} alt={product.title} className={styles.productImage} />
-                        <p className={styles.productTitle}>{product.title}</p>
+                        <img src={product.image} alt={product.name} className={styles.productImage} />
+                        <p className={styles.productTitle}>{product.name}</p>
                         <p className={styles.productPrice}>${product.price}</p>
                         {/* <a href={`/products/${product.id}`}>{product.title}</a> */}
                     </li>

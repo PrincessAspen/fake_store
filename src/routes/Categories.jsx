@@ -7,7 +7,7 @@ const Categories = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/categories')
+    fetch(`${import.meta.env.VITE_API_URL}/categories`)
       .then((response) => response.json())
       .then((data) => {
         setCategories(data);
@@ -25,8 +25,8 @@ const Categories = () => {
       <h1>Categories</h1>
       <ul>
         {categories.map((category) => (
-          <li key={category}>
-            <Link to={`/category/${category}`}>{category}</Link>
+          <li key={category.id}>
+            <Link to={`/category/${category.name}`}>{category.name}</Link>
           </li>
         ))}
       </ul>

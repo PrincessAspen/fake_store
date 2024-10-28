@@ -10,33 +10,17 @@ export const loader = async ({ params }) => {
 }
 
 const ProductDetail = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProduct(data);
-        setLoading(false);
-      })
-      .catch((error) => console.error('Error fetching product:', error));
-  }, [id]);
-
-  if (loading) {
-    return <h2>Loading product details...</h2>;
-  }
+  const product = useLoaderData();
 
   return (
     <div className={styles.productDetail}>
       <div className={styles.productDetailCard}>
         {product && (
           <>
-            <img src={product.image} alt={product.title} className={styles.productImage} />
-            <h1 className={styles.productTitle}>{product.title}</h1>
+            <img src={product.image} alt={product.name} className={styles.productImage} />
+            <h1 className={styles.productTitle}>{product.name}</h1>
             <p className={styles.productPrice}>${product.price}</p>
-            <p className={styles.productDescription}>{product.description}</p>
+            <p className={styles.productDescription}>{product.summary}</p>
           </>
         )}
       </div>
