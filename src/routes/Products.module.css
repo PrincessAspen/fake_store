@@ -1,45 +1,90 @@
-/* Products.module.css */
-.productList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .productItem {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .productItem:hover {
-    transform: scale(1.05);
-  }
-  
-  .productImage {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
-  .productTitle {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    color: #333;
-  }
-  
-  .productPrice {
-    color: #e63946;
-    font-weight: bold;
-  }
-  
-  .productLink {
-    color: blue;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
+/* Main container */
+.container {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header styling */
+.header {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Grid layout for product cards */
+.productGrid {
+  display: flex;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Product card styling */
+/* Product card styling */
+.productCard {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  padding: 15px;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.productImage {
+  width: 100%;
+  height: 200px; 
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+
+/* Product info */
+.productInfo {
+  margin-top: 10px;
+}
+
+/* Title styling */
+.productTitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Price styling */
+.productPrice {
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Link styling */
+.productLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  background-color: #007bff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.productLink:hover {
+  background-color: #0056b3;
+}

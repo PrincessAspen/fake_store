@@ -1,6 +1,7 @@
 import {Form} from 'react-router-dom';
 import {z} from 'zod';
 import supabase from '../supabase';
+import styles from './Registration.module.css';
 
 const RegistrationSchema = z.object({
     email: z.string().email('invalid-email').transform(email => email.toLowerCase()),
@@ -32,18 +33,20 @@ export const action = async ({request}) => {
 
 const Registration = () => {
     return (
-    <Form action="/registration" method="POST">
-        <label>
-            Your Email Address
-            <input name="username" type="email" placeholder="somekindofemail@butt.com" autoComplete="email" required/>
-        </label>
-        <label>
-            Password 
-            <input name="password" type="password" placeholder="thepassword" autoComplete="password" required/>
-        </label>
-        <button type="submit">Register</button>
-    </Form>
-    );
+        <div className={styles.formContainer}>
+          <Form className={styles.form} action="/registration" method="POST">
+            <label className={styles.label}>
+              Enter your email address
+              <input name="username" type="email" placeholder="bingusbongusbungus@buttmail.gov" autoComplete="email" required className={styles.input} />
+            </label>
+            <label className={styles.label}>
+              Choose a secure password
+              <input name="password" type="password" placeholder="SuperSecurePassword321" autoComplete="password" required className={styles.input} />
+            </label>
+            <button type="submit" className={styles.button}>Register</button>
+          </Form>
+        </div>
+      );
 };
 
 export default Registration;

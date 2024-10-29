@@ -1,0 +1,110 @@
+/* Main container for the home page */
+.homeContainer {
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #e63946;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Featured products section */
+.featuredSection h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.productGrid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+/* Product Card Styling */
+.productCard {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.productCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  background-color: #fafafa;
+}
+
+/* Image Styling */
+.productImage {
+  max-width: 100%;
+  height: 150px;
+  object-fit: contain; /* Ensures images maintain aspect ratio without cropping */
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
+
+/* Product Title */
+.productCard h3 {
+  font-size: 1.2rem;
+  color: #e63946;
+  margin: 10px 0;
+}
+
+/* Product Price */
+.productPrice {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  margin: 5px 0 10px;
+}
+
+/* Product Description */
+.productDescription {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Enhanced button styling for View Details link */
+.productLink {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.productLink:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #999;
+}

@@ -1,7 +1,17 @@
-import {Outlet, NavLink} from 'react-router-dom';
+import {Outlet, NavLink, useNavigate} from 'react-router-dom';
 import styles from './Layout.module.css';
+import { useAuth } from '../AuthContext'
 
 const Layout = () => {
+    const {user, token, logout} = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        const {error} = await logout();
+        if (!error) {
+            return navigate('/login')
+        }
+    }
     return(
         <>
         <nav className={styles.nav}>
@@ -15,9 +25,22 @@ const Layout = () => {
                 <li className={styles.navItem}>
                     <NavLink to="/categories" className={styles.navLink}>Categories</NavLink>
                 </li>
-                <li className={styles.navItem}>
-                    <NavLink to="/registration" className={styles.navLink}>Registration</NavLink>
-                </li>
+                <>
+                    {user && token ? (
+                        <li>
+                            <button type="button" onClick={handleLogout} className={styles.navLink}>Logout</button>
+                        </li>
+                    ) : (
+                        <>
+                            <li className={styles.navItem}>
+                                <NavLink to="/registration" className={styles.navLink}>Registration</NavLink>
+                            </li>
+                            <li className={styles.navItem}>
+                                <NavLink to="/login" className={styles.navLink}>Log in</NavLink>
+                            </li>
+                        </>
+                    )}
+                </>
             </ul>
         </nav>
         <Outlet/>

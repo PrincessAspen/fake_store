@@ -1,8 +1,9 @@
-import {Form, useActionData} from 'react-router-dom';
+import {Form, useActionData, Navigate} from 'react-router-dom';
 import {useEffect} from 'react'
 import {z} from 'zod';
 import supabase from '../supabase';
 import {useAuth} from '../AuthContext'
+import styles from './Login.module.css';
 
 const LoginSchema = z.object({
     email: z.string().email('invalid-email').transform(email => email.toLowerCase()),
@@ -36,28 +37,25 @@ export const action = async ({request}) => {
 
 const Login = () => {
     const data = useActionData();
-    const { setUser, setSession } = useAuth();
-    console.log(data);
-
-    useEffect(() => {
-        if (data?.user && data?.session) {
-            setUser(data.user);
-            setSession(data.session);
-        }
-    }, [data, setUser, setSession])
+    
+    if (data) {
+        return <Navigate to='/' replace />
+    }
 
     return (
-    <Form action="/login" method="POST">
-        <label>
-            Your Email Address
-            <input name="username" type="email" placeholder="somekindofemail@butt.com" autoComplete="email" required/>
-        </label>
-        <label>
-            Password 
-            <input name="password" type="password" placeholder="thepassword" autoComplete="password" required/>
-        </label>
-        <button type="submit">Log in</button>
-    </Form>
+        <div className={styles.formContainer}>
+            <Form className={styles.form} action="/login" method="POST">
+                <label className={styles.label}>
+                    Your Email Address
+                    <input className={styles.input} name="username" type="email" placeholder="bingusbongusbungus@buttmail.gov" autoComplete="email" required/>
+                </label>
+                <label className={styles.label}>
+                    Password 
+                    <input className={styles.input} name="password" type="password" placeholder="PasswordPassword123" autoComplete="password" required/>
+                </label>
+                <button className={styles.button} type="submit">Log in</button>
+            </Form>
+        </div>
     );
 };
 

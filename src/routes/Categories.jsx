@@ -23,10 +23,10 @@ const Categories = () => {
   return (
     <div>
       <h1>Categories</h1>
-      <ul>
+      <ul className={styles.categoriesGrid}>
         {categories.map((category) => (
           <li key={category.id}>
-            <Link to={`/category/${category.name}`}>{category.name}</Link>
+            <Link to={`/category/${category.name}`} className={styles.categoryItem}>{category.name}</Link>
           </li>
         ))}
       </ul>

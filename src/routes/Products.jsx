@@ -33,20 +33,24 @@ const Products = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Products</h1>
-            <ul className={styles.productList}>
-                {products.map((product) => (
-                    <li key={product.id}>
-                        <Link to={`/products/${product.id}`}>View Product Details</Link>
-                        <img src={product.image} alt={product.name} className={styles.productImage} />
-                        <p className={styles.productTitle}>{product.name}</p>
-                        <p className={styles.productPrice}>${product.price}</p>
-                        {/* <a href={`/products/${product.id}`}>{product.title}</a> */}
-                    </li>
-                ))}
-            </ul>
+          <h1 className={styles.header}>Our Products</h1>
+          <div className={styles.productGrid}>
+            {products.map((product) => (
+              <div key={product.id} className={styles.productCard}>
+                <img src={product.image} alt={product.name} className={styles.productImage} />
+                <div className={styles.productInfo}>
+                  <h2 className={styles.productTitle}>{product.name}</h2>
+                  <p className={styles.productPrice}>${product.price}</p>
+                  <Link to={`/products/${product.id}`} className={styles.productLink}>
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-    );
+      );
+      
 
 };
 
