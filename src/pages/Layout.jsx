@@ -2,7 +2,7 @@ import {Outlet, NavLink, useNavigate} from 'react-router-dom';
 import styles from './Layout.module.css';
 import { useAuth } from '../AuthContext'
 import {useCart} from '../CartContext'
-import CartNotifier from './CartNotifier';
+import CartNotifier from '../components/CartNotifier';
 
 const Layout = () => {
     const {user, token, logout} = useAuth();
@@ -44,7 +44,7 @@ const Layout = () => {
                         </>
                     )}
                 </>
-                <li>
+                <li className={styles.navItem}>
                     <CartNotifier/>
                 </li>
             </ul>

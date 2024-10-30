@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useLoaderData, Link} from 'react-router-dom'
 import styles from './Products.module.css'
-import AddToCartBtn from '../pages/AddToCartBtn'
+import AddToCartBtn from '../components/AddToCartBtn'
 
 export const loader = async () => {
     const apiUrl = `${import.meta.env.VITE_API_URL}/products`;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useCart } from '../CartContext';
+import styles from './CartNotifier.module.css'
 
 const CartNotifier = () => {
   const [quantity, setQuantity] = useState(0);
@@ -14,7 +15,7 @@ const CartNotifier = () => {
     setQuantity(getQuantity)
   }, [cartItems]);
 
-  return <p>{quantity} Items in Cart</p>;
+  return <p className={styles.cart}>{quantity} Items in Cart</p>;
 };
 
 export default CartNotifier;
