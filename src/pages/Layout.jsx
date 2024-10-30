@@ -1,9 +1,12 @@
 import {Outlet, NavLink, useNavigate} from 'react-router-dom';
 import styles from './Layout.module.css';
 import { useAuth } from '../AuthContext'
+import {useCart} from '../CartContext'
+import CartNotifier from './CartNotifier';
 
 const Layout = () => {
     const {user, token, logout} = useAuth();
+    const {cartItems} = useCart();
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -41,6 +44,9 @@ const Layout = () => {
                         </>
                     )}
                 </>
+                <li>
+                    <CartNotifier/>
+                </li>
             </ul>
         </nav>
         <Outlet/>

@@ -29,7 +29,7 @@ const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <header className={styles.header}>
-        <h1>Welcome to Manolio's 'lectro Pawn</h1>
+        <h1>Welcome to The Lectro Pawn</h1>
         <p>Your one-stop shop for used and broken electronics at unbelievable prices!</p>
       </header>
 

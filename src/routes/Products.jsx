@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useLoaderData, Link} from 'react-router-dom'
 import styles from './Products.module.css'
+import AddToCartBtn from '../pages/AddToCartBtn'
 
 export const loader = async () => {
     const apiUrl = `${import.meta.env.VITE_API_URL}/products`;
@@ -44,6 +45,7 @@ const Products = () => {
                   <Link to={`/products/${product.id}`} className={styles.productLink}>
                     View Details
                   </Link>
+                  <AddToCartBtn productId={product.id} />
                 </div>
               </div>
             ))}
