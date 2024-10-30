@@ -1,10 +1,10 @@
 import { useCart } from '../CartContext'
 
-const AddToCartBtn = ({ productId }) => {
+const AddToCartBtn = ({ product }) => {
     const {addToCart} = useCart();
 
     const handleClick = () => {
-        return addToCart(productId);
+        return addToCart(product);
     };
 
     return (

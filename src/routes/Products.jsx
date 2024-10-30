@@ -45,7 +45,7 @@ const Products = () => {
                   <Link to={`/products/${product.id}`} className={styles.productLink}>
                     View Details
                   </Link>
-                  <AddToCartBtn productId={product.id} />
+                  <AddToCartBtn product={product} />
                 </div>
               </div>
             ))}
