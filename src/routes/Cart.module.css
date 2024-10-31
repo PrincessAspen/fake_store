@@ -19,10 +19,11 @@
   .itemGrid {
     display: flex;
     align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     justify-items: center;
     margin-top: 20px;
+    max-width: 100%;
+    width: 700px;
   }
   
   /* item card styling */

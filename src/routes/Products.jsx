@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react'
 import {useLoaderData, Link} from 'react-router-dom'
 import styles from './Products.module.css'
 import AddToCartBtn from '../components/AddToCartBtn'
@@ -13,7 +12,6 @@ export const loader = async () => {
 
 const Products = () => {
     const products = useLoaderData();
-    console.log('PRODUCTS PLEASE?? :', products);
 
 
     // const [products, setProducts] = useState([]);

@@ -1,0 +1,32 @@
+/* Layout.module.css */
+.nav {
+    background-color: #343a40;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navList {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    margin: 0 20px;
+  }
+  
+  .navLink {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .navLink:hover {
+    color: #e63946;
+    cursor: pointer;
+  }
+  
