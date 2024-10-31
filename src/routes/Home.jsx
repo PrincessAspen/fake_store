@@ -36,7 +36,7 @@ const Home = () => {
       <div className={styles.featuredSection}>
         <h2>Featured Products</h2>
         <div className={styles.productGrid}>
-          {featuredProducts.map((product) => (
+          {featuredProducts.slice(0, 3).map((product) => (
             <Link to={`/products/${product.id}`} key={product.id} className={styles.productCard}>
               <img src={product.image} alt={product.name} className={styles.productImage} />
               <h3>{product.name}</h3>

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useLoaderData} from 'react-router-dom';
+import React from 'react';
+import {useLoaderData} from 'react-router-dom';
 import styles from './ProductDetail.module.css'
+import AddToCartBtn from '../components/AddToCartBtn';
 
 export const loader = async ({ params }) => {
   const { id } = params;
@@ -19,8 +20,9 @@ const ProductDetail = () => {
           <>
             <img src={product.image} alt={product.name} className={styles.productImage} />
             <h1 className={styles.productTitle}>{product.name}</h1>
-            <p className={styles.productPrice}>${product.price}</p>
+            <p className={styles.productPrice}>Only ${product.price}!!!</p>
             <p className={styles.productDescription}>{product.summary}</p>
+            <AddToCartBtn product={product} className={styles.productLink} />
           </>
         )}
       </div>

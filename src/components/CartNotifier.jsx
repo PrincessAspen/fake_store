@@ -1,3 +1,4 @@
+import {Outlet, NavLink, useNavigate} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useCart } from '../CartContext';
 import styles from './CartNotifier.module.css'
@@ -15,7 +16,7 @@ const CartNotifier = () => {
     setQuantity(getQuantity)
   }, [cartItems]);
 
-  return <p className={styles.cart}>{quantity} Items in Cart</p>;
+  return <NavLink to="/cart" className={styles.cart}>{quantity} Items in Cart</NavLink>
 };
 
 export default CartNotifier;

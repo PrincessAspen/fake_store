@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import styles from './CategoryProducts.module.css';
+import AddToCartBtn from '../components/AddToCartBtn';
 
 const CategoryProducts = () => {
   const { category } = useParams();
@@ -41,6 +42,7 @@ const CategoryProducts = () => {
             <Link to={`/products/${product.id}`} className={styles.productLink}>
               View Details
             </Link>
+            <AddToCartBtn product={product} className={styles.productLink} />
           </li>
         ))}
       </ul>

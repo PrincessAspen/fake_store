@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 /* Header styling */
@@ -15,19 +16,27 @@
   color: #333;
 }
 
+.gridWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* Grid layout for product cards */
 .productGrid {
   display: flex;
-  align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  flex-wrap: wrap;
   gap: 20px;
-  justify-items: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  margin: 0 auto;
 }
-
-/* Product card styling */
 /* Product card styling */
 .productCard {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -56,6 +65,10 @@
 
 /* Product info */
 .productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
 }
 
@@ -76,6 +89,7 @@
 /* Link styling */
 .productLink {
   display: inline-block;
+  width: 75%;
   margin-top: 10px;
   color: white;
   background-color: #007bff;

@@ -35,6 +35,7 @@ const Products = () => {
     return (
         <div className={styles.container}>
           <h1 className={styles.header}>Our Products</h1>
+          <div className={styles.gridWrapper}>
           <div className={styles.productGrid}>
             {products.map((product) => (
               <div key={product.id} className={styles.productCard}>
@@ -45,10 +46,11 @@ const Products = () => {
                   <Link to={`/products/${product.id}`} className={styles.productLink}>
                     View Details
                   </Link>
-                  <AddToCartBtn product={product} />
+                  <AddToCartBtn product={product} className={styles.productLink} />
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       );
