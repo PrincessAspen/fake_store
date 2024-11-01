@@ -2,6 +2,7 @@ import {Outlet, NavLink, useNavigate} from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useCart } from '../CartContext';
 import styles from './CartNotifier.module.css'
+import CartIcon from '../Images/CartIcon.png'
 
 const CartNotifier = () => {
   const [quantity, setQuantity] = useState(0);
@@ -16,7 +17,10 @@ const CartNotifier = () => {
     setQuantity(getQuantity)
   }, [cartItems]);
 
-  return <NavLink to="/cart" className={styles.cart}>{quantity} Items in Cart</NavLink>
+  return <NavLink to="/cart" className={styles.cart}>
+    <img src={CartIcon} className={styles.cartIcon}/>
+    <span>{quantity}</span>
+  </NavLink>
 };
 
 export default CartNotifier;

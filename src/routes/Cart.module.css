@@ -18,12 +18,12 @@
   /* Grid layout for item cards */
   .itemGrid {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
-    justify-items: center;
+    justify-content: center;
     margin-top: 20px;
     max-width: 100%;
-    width: 700px;
   }
   
   /* item card styling */

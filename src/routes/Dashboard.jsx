@@ -3,18 +3,20 @@ import { Form } from 'react-router-dom'
 export const action = async({request}) => {
     const formData = await request.formData();
     const apiUrl = `${import.meta.env.VITE_API_URL}/create/product`
+    const jsonData = Object.fromEntries(formData.entries());
 
-    const data = await fetch(apiUrl , {
+    const data = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-            "Authorization": `Bearer${sessionStorage.getItem('sb-access-token')}`
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${sessionStorage.getItem('sb-access-token')}`
         },
-        body: formData,
+        body: JSON.stringify(jsonData),
     }).then((response) => response.json())
 
     console.log(data);
 
-    return;
+    return true;
     }
 
 

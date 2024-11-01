@@ -17,3 +17,9 @@
     color: #e63946; 
     cursor: pointer;
   }
+
+  .cartIcon {
+    width: 50px;
+    height: auto;
+    margin: 0;
+  }
