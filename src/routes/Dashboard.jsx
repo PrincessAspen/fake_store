@@ -30,6 +30,7 @@ const Dashboard = () => {
         <label>Quality<input type='text' name='quality'/></label>
         <label>Summary<input type='text' name='summary'/></label>
         <label>Image URL<input type='text' name='image'/></label>
+        <label>Category ID<input type='number' name='category_id'/></label>
         <button type='submit'>Submit</button>
     </Form></>)
 }

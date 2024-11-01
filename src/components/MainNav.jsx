@@ -26,11 +26,12 @@ const Layout = () => {
                 <li className={styles.navItem}>
                     <NavLink to="/categories" className={styles.navLink}>Categories</NavLink>
                 </li>
-                <>
                     {user && token ? (
+                        <>
                         <li>
                             <button type="button" onClick={handleLogout} className={styles.navLink}>Logout</button>
                         </li>
+                        </>
                     ) : (
                         <>
                             <li className={styles.navItem}>
@@ -41,7 +42,6 @@ const Layout = () => {
                             </li>
                         </>
                     )}
-                </>
                 <li className={styles.navItem}>
                     <CartNotifier/>
                 </li>

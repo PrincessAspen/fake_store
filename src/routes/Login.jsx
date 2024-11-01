@@ -1,8 +1,6 @@
 import {Form, useActionData, Navigate} from 'react-router-dom';
-import {useEffect} from 'react'
 import {z} from 'zod';
 import supabase from '../supabase';
-import {useAuth} from '../AuthContext'
 import styles from './Login.module.css';
 
 const LoginSchema = z.object({
