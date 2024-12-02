@@ -3,7 +3,7 @@ const ErrorPage = () => {
         <>
             <main>
                 <h1>Something is broken</h1>
-                <p>Why for sean be so mean to himself</p>
+                <p>Try reloading the page</p>
             </main>
         </>
     )
